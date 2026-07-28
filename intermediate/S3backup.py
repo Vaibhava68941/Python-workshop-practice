@@ -1,6 +1,7 @@
+#This script creates a bucket in AWS S3 and uploads a backup zip file to it.
 import boto3
 
-s3 = boto3.resource("s3")
+s3 = boto3.resource("s3") #initializing the S3 resource using boto3
 def show_buckets(s3):
     
     for bucket in s3.buckets.all():
@@ -22,7 +23,10 @@ bucket_name = "python-s3-bucket-t"
 # 4. Fixed: Pointed directly to the file, not just the folder
 file_path = r"C:\Users\USER\Documents\Python-workshop-practice\backups\backup_2026-06-18.zip"
 
-# Call the function
-upload_backup(s3, bucket_name, file_path, "my_backup.zip")
 #create_bucket(s3, "python-s3-bucket-t")
 #show_buckets(s3)
+
+# Call the function
+upload_backup(s3, bucket_name, file_path, "my_backup.zip")
+
+
