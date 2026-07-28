@@ -1,18 +1,9 @@
+//This Python script checks the system metrics disk space,RAM and server uptime for Linux and Windows servers. It uses the os module to execute system commands and display the results.
 import os
-import shutil  
 
-#checking the disk usage of the root directory
-total, used, free = shutil.disk_usage("/") 
-
-# Convert the bytes to Gigabytes (1 GB = 1024^3 bytes)
-total_disk_gb = total / (1024 ** 3)
-used_disk_gb = used / (1024 ** 3)
-free_disk_gb = free / (1024 ** 3)
-
-# Print the formatted result
-print(f"Total Disk Space: {total_disk_gb:.2f} GB")
-print(f"Used Disk Space: {used_disk_gb:.2f} GB")
-print(f"Free Disk Space: {free_disk_gb:.2f} GB")
+print(os.system("df -h"))
+print(os.system("free -h"))
+print(os.system("uptime -p"))
 
 //Windows server
 print(os.system("chkdsk C:"))
